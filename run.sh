@@ -3,7 +3,7 @@
 runstr="cargo run"
 input="input"
 
-usage() { echo "Usage: [-tprf] [-d <int>]" 1>&2; exit 1; }
+usage() { echo "Usage: [-tpr] [-d <int>]" 1>&2; exit 1; }
 
 while getopts "ptrd:" opt ; do
     case $opt in
@@ -28,4 +28,4 @@ done
 runstr="${runstr} --bin day${day} src/days/day${day}/resources/${input}"
 
 echo $runstr
-echo `$runstr`
+$runstr
