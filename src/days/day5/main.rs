@@ -147,11 +147,9 @@ fn main() {
     }
 
     let mut overlapped_count = 0;
-    for i in 0..area_size {
-        for j in 0..area_size {
-            if map[i][j] > 1 {
-                overlapped_count += 1;
-            }
+    for v in map {
+        for e in v {
+            if e > 1 { overlapped_count += 1; }
         }
     }
 

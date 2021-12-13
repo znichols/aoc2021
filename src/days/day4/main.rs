@@ -47,12 +47,12 @@ impl Board {
     }
 
     fn from_slice(input: &[&str]) -> Option<Board> {
-        if input.len() == 0 || input[0].len() == 0 {
+        if input.is_empty() || input[0].is_empty() {
             return None
         }
         let mut numbers: Vec<Vec<i32>> = Vec::new();
         let mut i = 0;
-        while i < input.len() && input[i].len() > 0 {
+        while i < input.len() && !input[i].is_empty() {
             let v: Vec<i32> = input[i].split(' ').flat_map(|s| s.parse()).collect();
             numbers.push(v);
             i += 1;

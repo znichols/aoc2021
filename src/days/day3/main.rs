@@ -40,13 +40,13 @@ fn main() {
             let cmp_bits = bit_count(&o2_lines, num_bits, false);
             o2_lines = o2_lines.iter().filter(
                 |s| s.chars().nth(i).unwrap() == cmp_bits[i]
-            ).map(|s| *s).collect();
+            ).copied().collect();
         }
         if co2_lines.len() > 1 {
             let cmp_bits = bit_count(&co2_lines, num_bits, false);
             co2_lines = co2_lines.iter().filter(
                 |s| s.chars().nth(i).unwrap() != cmp_bits[i]
-            ).map(|s| *s).collect();
+            ).copied().collect();
         }
     }
     let o2 = i32::from_str_radix(o2_lines[0], 2).unwrap();
